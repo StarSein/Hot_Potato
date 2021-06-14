@@ -8,7 +8,6 @@ def sorting():
     for count in range(1, len(list_word) + 1):
         for i in range(len(list_word) - count):
             list_word[i], list_word[i+1] = compare(list_word[i], list_word[i+1])
-            print(*list_word)
 
 
 def compare(a, b):
@@ -23,31 +22,23 @@ def compare(a, b):
 
             if a[idx].isdigit() and not b[idx].isdigit():
                 a, b = b, a
-                break
             elif not a[idx].isdigit() and b[idx].isdigit():
-                break
+                pass
             else:
                 if a[idx].isdigit() and b[idx].isdigit():
                     if int(a[idx]) > int(b[idx]):
                         a, b = b, a
-                        break
                 elif a[idx].isupper() and b[idx].isupper():
                     if a[idx] > b[idx]:
                         a, b = b, a
-                        break
-                    else:
-                        break
                 elif a[idx].islower() and b[idx].isupper():
                     a, b = b, a
-                    break
                 elif a[idx].isupper() and b[idx].islower():
-                    break
+                    pass
                 else:
                     if a[idx] > b[idx]:
                         a, b = b, a
-                        break
-                    else:
-                        break
+            break
     return a, b
 
 
