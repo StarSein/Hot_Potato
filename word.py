@@ -1,9 +1,7 @@
 with open('word.inp', 'r') as inFile:
-    list_word = list(inFile.readline().split())
+    list_word = list(inFile.readline().split())     # 정렬 기준 : 길이(짧은것부터) > 문자(대문자 우선, 백과사전순) > 숫자(작은수부터)
 
-# 정렬 기준 : 길이(짧은것부터) > 문자(대문자 우선, 백과사전순) > 숫자(작은수부터)
-
-
+    
 def sorting():
     for count in range(1, len(list_word) + 1):
         for i in range(len(list_word) - count):
